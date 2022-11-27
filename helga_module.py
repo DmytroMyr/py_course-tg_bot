@@ -1,2 +1,2 @@
 def func():
-    return "This is Dima's module"
+    return "This is Helga's module"
