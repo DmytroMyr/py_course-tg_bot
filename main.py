@@ -2,6 +2,9 @@ from flask import Flask, request
 import telebot
 import os
 
+import dima_module
+import helga_module
+
 app = Flask(__name__)
 TOKEN = os.environ.get('TOKEN')
 bot = telebot.TeleBot(TOKEN)
@@ -10,6 +13,16 @@ bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(commands=['start'])
 def message_start(message):
     bot.send_message(message.chat.id, 'Hello, user!')
+
+
+@bot.message_handler(commands=['dima'])
+def dima_func(message):
+    bot.send_message(message.chat.id, dima_module.func())
+
+
+@bot.message_handler(commands=['helga'])
+def dima_func(message):
+    bot.send_message(message.chat.id, helga_module.func())
 
 
 @app.route('/' + TOKEN, methods=['POST'])
