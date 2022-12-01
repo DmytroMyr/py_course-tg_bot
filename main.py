@@ -47,7 +47,7 @@ def year_input(message):
 
 
 @bot.message_handler(commands=['helga'])
-def dima_func(message):
+def helga_func(message):
     bot.send_message(message.chat.id, helga_module.func())
 
 
