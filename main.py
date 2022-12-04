@@ -15,6 +15,11 @@ def message_start(message):
     bot.send_message(message.chat.id, f'Привіт, {message.from_user.first_name}!')
 
 
+@bot.message_handler(commands=['help'])
+def message_start(message):
+    bot.send_message(message.chat.id, f"/movie - пошук фільмів\n/book - для пошук книг")
+
+
 # ===== DIMA'S FUNCTIONS START =====
 user_choices = {}
 
