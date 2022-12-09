@@ -12,7 +12,7 @@ bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
 def message_start(message):
-    bot.send_message(message.chat.id, f'Привіт, {message.from_user.first_name}!')
+    bot.send_message(message.chat.id, f'Привіт, {message.from_user.first_name}!\n/help - для довідки')
 
 
 @bot.message_handler(commands=['help'])
@@ -50,10 +50,13 @@ def year_input(message):
 
 # ===== DIMA'S FUNCTIONS END =====
 
-
-@bot.message_handler(commands=['helga'])
+# ===== HELGA'S FUNCTIONS START =====
+@bot.message_handler(commands=['helga', 'book'])
 def helga_func(message):
     bot.send_message(message.chat.id, helga_module.func())
+
+
+# ===== HELGA'S FUNCTIONS END =====
 
 
 bot.polling(none_stop=True)
