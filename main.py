@@ -6,7 +6,8 @@ import dima_module
 import helga_module
 
 app = Flask(__name__)
-TOKEN = os.environ.get('TOKEN')
+#TOKEN = os.environ.get('TOKEN')
+TOKEN = '5958670043:AAEozxQfJo-Zq2UrbndXPWCJ3vhtm9kXzfA'
 bot = telebot.TeleBot(TOKEN)
 
 
@@ -56,6 +57,9 @@ def helga_func(message):
     bot.send_message(message.chat.id, helga_module.func())
 
 
+bot.polling(none_stop=True)
+
+
 @app.route('/' + TOKEN, methods=['POST'])
 def get_message():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
@@ -65,7 +69,7 @@ def get_message():
 @app.route('/')
 def main():
     bot.remove_webhook()
-    bot.set_webhook(url='https://telebot-pycourse.herokuapp.com/' + TOKEN)
+    bot.set_webhook(url='https://genit-telegrambot.herokuapp.com/' + TOKEN)
     return "Python Telegram Bot", 200
 
 
