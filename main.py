@@ -6,8 +6,7 @@ import dima_module
 import helga_module
 
 app = Flask(__name__)
-#TOKEN = os.environ.get('TOKEN')
-TOKEN = '5958670043:AAEozxQfJo-Zq2UrbndXPWCJ3vhtm9kXzfA'
+TOKEN = os.environ.get('TOKEN')
 bot = telebot.TeleBot(TOKEN)
 
 
