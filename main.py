@@ -65,11 +65,8 @@ def get_message():
 @app.route('/')
 def main():
     bot.remove_webhook()
-    bot.set_webhook(url='https://willowy-cobbler-d44f43.netlify.app/' + TOKEN)
+    bot.set_webhook(url='https://telebot-pycourse.herokuapp.com/' + TOKEN)
     return "Python Telegram Bot", 200
-
-
-bot.polling(none_stop=True)
 
 
 if __name__ == '__main__':
