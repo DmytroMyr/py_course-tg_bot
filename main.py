@@ -42,10 +42,15 @@ def genre_input(message):
 
 def year_input(message):
     print(message.text)
-    user_choices['year'] = message.text
-    bot.send_message(message.chat.id, f'Ваш вибір: {user_choices["genre"]}, {user_choices["year"]}')
-    result = dima_module.movie_finder(user_choices["genre"], int(user_choices["year"]))
-    bot.send_message(message.chat.id, result)
+    if message.text.isnumeric():
+        user_choices['year'] = message.text
+        bot.send_message(message.chat.id, f'Ваш вибір: {user_choices["genre"]}, {user_choices["year"]}')
+        result = dima_module.movie_finder(user_choices["genre"], int(user_choices["year"]))
+        bot.send_message(message.chat.id, result)
+    else:
+        bot.send_message(message.chat.id, 'Невірне введення')
+        bot.send_message(message.chat.id, f"/movie - пошук фільмів\n/book - для пошук книг")
+        return None
 
 
 # ===== DIMA'S FUNCTIONS END =====
