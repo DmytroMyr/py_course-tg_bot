@@ -1,0 +1,54 @@
+{
+  "fiction": {
+    "science fiction": [
+      "Brave New World,Aldous Huxley,https://www.penguin.co.uk/books/431950/brave-new-world-by-aldous-huxley/9781784870140",
+      "The Invisible Man,H.G. Wells,https://www.penguin.co.uk/books/434356/the-invisible-man-by-hg-wells/9781784872090",
+      "The Time Machine,H G Wells,https://www.penguin.co.uk/books/183800/the-time-machine-by-h-g-wells/9780141199344",
+      "Mortal Engines,Stanislaw Lem,https://www.penguin.co.uk/books/295671/mortal-engines-by-lem-stanislaw/9780241269077",
+      "The War of the Worlds,H.G. Wells,https://www.penguin.co.uk/books/55564/the-war-of-the-worlds-by-hg-wells-intro--brian-aldiss-notes--andy-sawyer-text--patrick-parrinder/9780141441030"
+    ],
+    "fantasy": [
+      "Game of Thrones: A Guide to Westeros and Beyond,Myles McNutt,https://www.penguin.co.uk/books/309423/game-of-thrones-a-guide-to-westeros-and-beyond-by-mcnutt-myles/9780241355510",
+      "The Butterfly Tattoo,Philip Pullman,https://www.penguin.co.uk/books/320207/the-butterfly-tattoo-by-pullman-philip/9780241492000",
+      "The Starless Sea,Erin Morgenstern,https://www.penguin.co.uk/books/432573/the-starless-sea-by-erin-morgenstern/9781473524231",
+      "Book of Night,Holly Black,https://www.penguin.co.uk/books/443680/book-of-night-by-black-holly/9781529102376",
+      "Gild,Raven Kennedy,https://www.penguin.co.uk/books/454143/gild-by-kennedy-raven/9781405955003"
+    ],
+    "action & adventure": [
+      "Black Sun,Owen Matthews,https://www.penguin.co.uk/books/439975/black-sun-by-owen-matthews/9780552176576",
+      "Live and Let Die,Ian Fleming,https://www.penguin.co.uk/books/414855/live-and-let-die-by-ian-fleming/9780099575993",
+      "Great Circle,Maggie Shipstead,https://www.penguin.co.uk/books/440437/great-circle-by-shipstead-maggie/9781529176643",
+      "The Lost Symbol,Dan Brown,https://www.penguin.co.uk/books/329685/the-lost-symbol-by-dan-brown/9780552149525",
+      "White Fox,Owen Matthews,https://www.penguin.co.uk/books/444513/white-fox-by-matthews-owen/9781787634985"
+    ]
+  },
+
+  "non-fiction": {
+    "biographies": [
+      "A Promised Land,Barack Obama,https://www.penguin.co.uk/books/321772/a-promised-land-by-obama-barack/9780241491515",
+      "The Palace Papers,Tina Brown,https://www.penguin.co.uk/books/441026/the-palace-papers-by-brown-tina/9781529158809",
+      "Elizabeth,Gyles Brandreth,https://www.penguin.co.uk/books/447045/elizabeth-by-brandreth-gyles/9780241582589",
+      "John F. Kennedy,Robert Dallek,https://www.penguin.co.uk/books/1024/john-f-kennedy-by-robert-dallek/9780141976587",
+      "Boris Johnson the Gambler,Tom Bower,https://www.penguin.co.uk/books/441476/boris-johnson-by-bower-tom/9780753554920"
+    ],
+    "history": [
+      "Icebreaker A Voyage Far North,Horatio Clare,https://www.penguin.co.uk/books/436017/icebreaker-by-horatio-clare/9781784706791",
+      "Midnight in Chernobyl,Adam Higginbotham,https://www.penguin.co.uk/books/433042/midnight-in-chernobyl-by-adam-higginbotham/9781473540828",
+      "The Art of Innovation,Ian Blatchford,https://www.penguin.co.uk/books/440279/the-art-of-innovation-by-ian-blatchford-and-tilly-blyth/9781473570733",
+      "Churchill,Piers Brendon, https://www.penguin.co.uk/books/367620/churchill-by-piers-brendon/9781446484920",
+      "Japan Story,Christopher Harding,https://www.penguin.co.uk/books/304460/japan-story-by-harding-christopher/9780141985367"
+    ],
+    "science & nature": [
+      "Sapiens,Yuval Noah Harari,https://www.penguin.co.uk/books/419795/sapiens-by-yuval-noah-harari/9780099590088",
+      "A Brief History Of Time,Stephen Hawking,https://www.penguin.co.uk/books/330079/a-brief-history-of-time-by-stephen-hawking/9781409092360",
+      "Origins,Lewis Dartnell,https://www.penguin.co.uk/books/433955/origins-by-lewis-dartnell/9781473547339",
+      "15 Million Degrees,Lucie Green,https://www.penguin.co.uk/books/187592/15-million-degrees-by-green-professor-lucie/9780241963555",
+      "Ask an Astronaut,Tim Peake,https://www.penguin.co.uk/books/436711/ask-an-astronaut-by-tim-peake/9781784759483"
+    ]
+  }
+}
+
+
+
+
+
