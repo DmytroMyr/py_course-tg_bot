@@ -71,7 +71,7 @@ def message_books(message):
     categ = ','.join(categ)
     button = telebot.types.InlineKeyboardButton(text=categ.split(','))
     keyboard.add(button)
-    bot.send_message(message.chart.id, 'Available categories', reply_markup=keyboard)
+    bot.send_message(message.chat.id, 'Available categories', reply_markup=keyboard)
     bot.register_next_step_handler(message, category_input)
 
 def category_input(message):
