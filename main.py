@@ -1,5 +1,6 @@
 from flask import Flask, request
 import telebot
+from telebot import types
 import os
 
 import dima_module
@@ -56,41 +57,50 @@ def year_input(message):
 # ===== DIMA'S FUNCTIONS END =====
 
 # ===== HELGA'S FUNCTIONS START =====
-
-books = {
-    'fiction': 'science fiction; fantasy; action & adventure',
-    'non-fiction': 'biographies; history; science & nature'
-}
-
-selection = {}
-
-@bot.message_handler(commands=['helga', 'book'])
-def message_books(message):
-    keyboard = telebot.types.InlineKeyboardMarkup(row_width=1)  # create and design keyboard
-    categ = list(books.keys())
-    categ = ','.join(categ)
-    button = telebot.types.InlineKeyboardButton(text=categ.split(','))
-    keyboard.add(button)
-    bot.send_message(message.chat.id, 'Available categories', reply_markup=keyboard)
-    bot.register_next_step_handler(message, category_input)
-
-def category_input(message):
-    c_reply = message.text
-    selection['category'] = c_reply
-    keyboard = telebot.types.InlineKeyboardMarkup(row_width=1)
-    subcateg = books[c_reply]
-    button = telebot.types.InlineKeyboardButton(text=subcateg.split('; '))
-    keyboard.add(button)
-    bot.send_message(message.chat.id, 'Select subcategory', reply_markup=keyboard)
-    bot.register_next_step_handler(message, subcategory_input)
+selected = {}
 
 
-def subcategory_input(message):
-    s_reply = message.text
-    selection['subcategory'] = s_reply
-    bot.send_message(message.chat.id, f"Your preference: {selection['subcategory']}")
-    result = helga_module.book_commend(selection['category'], selection['subcategory'])
-    bot.send_message(message.chart.id, '5 bestselling books for you:\n', result)
+@bot.message_handler(['books'])
+def get_user_category(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+    fiction = types.KeyboardButton('fiction')
+    n_fiction = types.KeyboardButton('non-fiction')
+    markup.add(fiction, n_fiction)
+    bot.send_message(message.chat.id, f"Select category:", reply_markup=markup)
+    bot.register_next_step_handler(message, receive_category)
+
+
+def receive_category(message):
+    selected['category'] = message.text
+    bot.register_next_step_handler(message, get_user_subcategory)
+
+
+@bot.message_handler(content_types=['text'])
+def get_user_subcategory(message):
+    if message.text == 'fiction':
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("science fiction")
+        btn2 = types.KeyboardButton("fantasy")
+        back = types.KeyboardButton("action & adventure")
+        markup.add(btn1, btn2, back)
+        bot.send_message(message.chat.id, text="Select subcategory", reply_markup=markup)
+    elif message.text == 'non-fiction':
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("biographies")
+        btn2 = types.KeyboardButton("history")
+        back = types.KeyboardButton("science & nature")
+        markup.add(btn1, btn2, back)
+        bot.send_message(message.chat.id, text="Select subcategory", reply_markup=markup)
+    bot.register_next_step_handler(message, receive_subcategory)
+
+
+def receive_subcategory(message):
+    selected['subcategory'] = message.text
+    bot.send_message(message.chat.id, f"Search params: {selected['category']} & {selected['subcategory']}")
+    result = helga_module.book_commend(selected['category'], selected['subcategory'])
+    bot.send_message(message.chat.id, '5 bestselling books for you: ', parse_mode=None)
+    bot.send_message(message.chat.id, result)
+
 
 # ===== HELGA'S FUNCTIONS END =====
 

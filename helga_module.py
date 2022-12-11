@@ -14,12 +14,14 @@ def book_commend(category, subcategory):
         for e in subcateg:
             for el in e:
                 subcategories.append(el)
-        print(subcategories)
+
         if category in categories and subcategory in subcategories:
             recommend = books[category][subcategory]
             for i in recommend:
                 title, auther, url = i.split(',')[0], i.split(',')[1], i.split(',')[2]
-                result.append(f'{category}\n{subcategory}\n{title}\n{auther}\n{url}\n')
+                result.append(f'Title: {title}\n'
+                              f'Author: {auther}\n'
+                              f'Book summary & order: {url}\n')
             return '\n'.join(result)
 
         else:
@@ -27,6 +29,6 @@ def book_commend(category, subcategory):
 
 
 if __name__ == '__main__':
-    print(book_commend(category='non-fiction', subcategory='science & nature'))
-    print('=' * 100)
-    print(book_commend(category='fiction', subcategory='action & adventure'))
+    print(book_commend(category='non-fiction', subcategory='history'))
+    # print('=' * 100)
+    # print(book_commend(category='fiction', subcategory='action & adventure'))
