@@ -60,7 +60,7 @@ def year_input(message):
 selected = {}
 
 
-@bot.message_handler(['books'])
+@bot.message_handler(['book'])
 def get_user_category(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
     fiction = types.KeyboardButton('fiction')
