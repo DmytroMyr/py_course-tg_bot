@@ -105,9 +105,6 @@ def receive_subcategory(message):
 # ===== HELGA'S FUNCTIONS END =====
 
 
-bot.polling(none_stop=True)
-
-
 @app.route('/' + TOKEN, methods=['POST'])
 def get_message():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
